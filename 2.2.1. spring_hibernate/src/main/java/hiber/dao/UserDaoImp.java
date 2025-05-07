@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
@@ -34,9 +35,8 @@ public class UserDaoImp implements UserDao {
                  .setParameter("model", model)
                  .setParameter("series", series);
          return query.getSingleResult();
-      } catch (Exception e) {
-         e.printStackTrace();
-         return null;
+      } catch (NoResultException e) {
+         throw new RuntimeException("Пользователь с моделью машины " + model + " и серией " + series + " не найден");
       }
    }
 }

@@ -20,7 +20,7 @@ public class MainApp {
 //      User user2 = new User("User2", "Lastname2", "user2@mail.ru", new Car("Car2", 2));
 //      User user3 = new User("User3", "Lastname3", "user3@mail.ru", new Car("Car3", 3));
 //      User user4 = new User("User4", "Lastname4", "user4@mail.ru", new Car("Car4", 4));
-
+//
 //      userService.add(user1);
 //      userService.add(user2);
 //      userService.add(user3);
@@ -33,7 +33,7 @@ public class MainApp {
          System.out.println("Email = "+user.getEmail());
          System.out.println();
       }
-      System.out.println(userService.selectUserByCarSeries("Car3", 3));
+      System.out.println(userService.selectUserByCarSeries("Car6", 6));
 
       context.close();
    }
